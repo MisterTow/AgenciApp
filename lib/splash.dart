@@ -24,6 +24,15 @@ class _splashState extends State<splash> {
             ], //color ojo
           ),
         ),
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/logosinfondo.png',
+              height: 300.0,
+              width: 300.0,
+            ),
+          ],
+        ),
       ),
     );
   }
