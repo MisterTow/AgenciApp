@@ -2,6 +2,7 @@ import 'package:agencia/models/vivienda.dart';
 import 'package:agencia/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+//importar el splash screen aqui
 
 void main() {
   runApp(splash());
