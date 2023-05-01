@@ -11,7 +11,7 @@ class splash extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('material App Bar'),
+          title: const Text('App Bar'),
         ),
         body: Center(
           child: Container(
