@@ -1,13 +1,25 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class splash extends StatefulWidget {
-  const splash({super.key});
+import 'package:flutter/material.dart';
+import 'package:agencia/login.dart';
+
+class Splash extends StatefulWidget {
+  const Splash({super.key});
 
   @override
-  State<splash> createState() => _splashState();
+  State<Splash> createState() => _splashState();
 }
 
-class _splashState extends State<splash> {
+class _splashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 10),
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => Login())));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +37,35 @@ class _splashState extends State<splash> {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset(
-              'assets/images/logosinfondo.png',
-              height: 300.0,
-              width: 300.0,
+            Column(
+              children: [
+                Text(
+                  "Desde la comodidad de tu celular",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0),
+                ),
+                Image.asset(
+                  'assets/images/logosinfondo.png',
+                  height: 600.0,
+                  width: 600.0,
+                ),
+                Text(
+                  "Busca lo que necesitas",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18.0),
+                ),
+              ],
             ),
+            CircularProgressIndicator(),
           ],
         ),
       ),
