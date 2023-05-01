@@ -15,7 +15,7 @@ class splash extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-            child: const Text('Hello Work hola'),
+            child: const Text('Hello World'),
           ),
         ),
       ),
