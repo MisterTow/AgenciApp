@@ -20,7 +20,7 @@ class _splashState extends State<splash> {
             end: Alignment.bottomRight,
             colors: [
               Color.fromRGBO(43, 49, 73, 0.959),
-              Color.fromRGBO(51, 62, 82, 255),
+              Color.fromRGBO(51, 62, 82, 170),
             ], //color ojo
           ),
         ),
