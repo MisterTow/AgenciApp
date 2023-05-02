@@ -1,9 +1,7 @@
 import 'package:agencia/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import './inicio.dart';
-import 'Registros/registroI.dart';
-
+import 'package:async/async.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
