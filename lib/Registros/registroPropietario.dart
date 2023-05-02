@@ -1,17 +1,20 @@
-import 'package:agencia/Registros/registroI.dart';
+import 'package:agencia/Registros/registrocasas.dart';
 import 'package:agencia/homes/home_inquilinos.dart';
+import 'package:agencia/Registros/registroPropietario.dart';
+import 'package:agencia/homes/home_propietario.dart';
+import 'package:agencia/logins/loginpropietario.dart';
 import 'package:flutter/material.dart';
+import 'registroPropietario.dart';
 import 'package:agencia/inicio.dart';
-import 'package:agencia/logins/logininquilino.dart';
 
-class LoginInquilino extends StatefulWidget {
-  LoginInquilino({Key? key}) : super(key: key);
+class RegistroPropietario extends StatefulWidget {
+  RegistroPropietario({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _RegistroPropietario createState() => _RegistroPropietario();
 }
 
-class _LoginState extends State<LoginInquilino> {
+class _RegistroPropietario extends State<RegistroPropietario> {
   String _nombre = "";
   String _email = "";
   String _password = "";
@@ -32,7 +35,7 @@ class _LoginState extends State<LoginInquilino> {
               backgroundImage: AssetImage('assets/images/logosinfondo.png'),
             ),
             Text(
-              'Iniciar sesion como inquilino',
+              'Registrate como propietario',
               style: TextStyle(
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700,
@@ -91,11 +94,13 @@ class _LoginState extends State<LoginInquilino> {
                         ),
                         borderRadius: BorderRadius.circular(50)))),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeInquilino()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePropietario()));
                 },
                 child: Text(
-                  'Iniciar Sesion',
+                  'Registrase',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 30.0,
@@ -109,8 +114,11 @@ class _LoginState extends State<LoginInquilino> {
                 minimumSize: Size.square(50),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PrimeraPagina()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPropietario(),
+                    ));
               },
               label: const Text(''),
               icon: const Icon(Icons.login),
@@ -128,10 +136,10 @@ class _LoginState extends State<LoginInquilino> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegistroInquilino(),
+                      builder: (context) => registrocasas(),
                     ));
               },
-              child: Text('No Tienes Cuenta?'), //comentario
+              child: Text('Registra una casa como propietario'), //
             )
           ])
         ],

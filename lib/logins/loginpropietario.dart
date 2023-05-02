@@ -1,7 +1,7 @@
+import 'package:agencia/Registros/registroPropietario.dart';
 import 'package:agencia/homes/home_inquilinos.dart';
 import 'package:agencia/homes/home_propietario.dart';
 import 'package:flutter/material.dart';
-import './loginpropietario.dart';
 import 'package:agencia/inicio.dart';
 
 class LoginPropietario extends StatefulWidget {
@@ -32,7 +32,7 @@ class _LoginState extends State<LoginPropietario> {
               backgroundImage: AssetImage('assets/images/logosinfondo.png'),
             ),
             Text(
-              'Iniciar sesion',
+              'Iniciar sesion como propietario',
               style: TextStyle(
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700,
@@ -94,8 +94,7 @@ class _LoginState extends State<LoginPropietario> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => homepropietario(title: 'hola'),
-                      ));
+                          builder: (context) => HomePropietario()));
                 },
                 child: Text(
                   'Iniciar Sesion',
@@ -120,6 +119,24 @@ class _LoginState extends State<LoginPropietario> {
               },
               label: const Text(''),
               icon: const Icon(Icons.login),
+            ),
+            TextButton(
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                    (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.focused))
+                    return Colors.red; // Defer to the widget's default.
+                }),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegistroPropietario(),
+                    ));
+              },
+              child: Text('No Tienes Cuenta?'),
             )
           ])
         ],

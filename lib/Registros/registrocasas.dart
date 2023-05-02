@@ -1,17 +1,18 @@
-import 'package:agencia/Registros/registroI.dart';
-import 'package:agencia/homes/home_inquilinos.dart';
+import 'package:agencia/Registros/registroPropietario.dart';
+import 'package:agencia/logins/logininquilino.dart';
 import 'package:flutter/material.dart';
 import 'package:agencia/inicio.dart';
-import 'package:agencia/logins/logininquilino.dart';
+import 'package:agencia/Registros/registroI.dart';
+import 'package:agencia/Registros/registrocasas.dart';
 
-class LoginInquilino extends StatefulWidget {
-  LoginInquilino({Key? key}) : super(key: key);
+class registrocasas extends StatefulWidget {
+  registrocasas({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _Registrocasas createState() => _Registrocasas();
 }
 
-class _LoginState extends State<LoginInquilino> {
+class _Registrocasas extends State<registrocasas> {
   String _nombre = "";
   String _email = "";
   String _password = "";
@@ -32,7 +33,7 @@ class _LoginState extends State<LoginInquilino> {
               backgroundImage: AssetImage('assets/images/logosinfondo.png'),
             ),
             Text(
-              'Iniciar sesion como inquilino',
+              'una casa',
               style: TextStyle(
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700,
@@ -49,8 +50,24 @@ class _LoginState extends State<LoginInquilino> {
             ),
             TextField(
               decoration: InputDecoration(
-                hintText: 'Correo Electronico',
-                labelText: 'Correo Electronico',
+                hintText: 'Nombre del propietario',
+                labelText: 'Nombre del propietario',
+                suffix: Icon(Icons.alternate_email),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+              ),
+              onSubmitted: (valor) {
+                _email = valor;
+                print('El email es $_email');
+              },
+            ),
+            Divider(
+              height: 15.0,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Direccion del imueble',
+                labelText: 'Direccion del imueble',
                 suffix: Icon(Icons.alternate_email),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)),
@@ -67,8 +84,26 @@ class _LoginState extends State<LoginInquilino> {
               enableInteractiveSelection: false,
               obscureText: true,
               decoration: InputDecoration(
-                hintText: 'Contrasena',
-                labelText: 'Contrasena',
+                hintText: 'Monto de renta',
+                labelText: 'Monto de renta',
+                suffix: Icon(Icons.lock_outline),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0)),
+              ),
+              onSubmitted: (valor) {
+                _password = valor;
+                print('El password  es $_password');
+              },
+            ),
+            Divider(
+              height: 15.0,
+            ),
+            TextField(
+              enableInteractiveSelection: false,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Formas de pagosa',
+                labelText: 'Formas de pagos',
                 suffix: Icon(Icons.lock_outline),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)),
@@ -90,12 +125,9 @@ class _LoginState extends State<LoginInquilino> {
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(50)))),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeInquilino()));
-                },
+                onPressed: () {},
                 child: Text(
-                  'Iniciar Sesion',
+                  'Registrar',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 30.0,
@@ -109,29 +141,13 @@ class _LoginState extends State<LoginInquilino> {
                 minimumSize: Size.square(50),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PrimeraPagina()));
-              },
-              label: const Text(''),
-              icon: const Icon(Icons.login),
-            ),
-            TextButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
-                overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                    (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.focused))
-                    return Colors.red; // Defer to the widget's default.
-                }),
-              ),
-              onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegistroInquilino(),
-                    ));
+                        builder: (context) => RegistroPropietario())); //ojo
               },
-              child: Text('No Tienes Cuenta?'), //comentario
+              label: const Text(''),
+              icon: const Icon(Icons.login),
             )
           ])
         ],

@@ -1,17 +1,16 @@
-import 'package:agencia/Registros/registroI.dart';
-import 'package:agencia/homes/home_inquilinos.dart';
+import 'package:agencia/logins/logininquilino.dart';
 import 'package:flutter/material.dart';
 import 'package:agencia/inicio.dart';
-import 'package:agencia/logins/logininquilino.dart';
+import 'package:agencia/Registros/registroI.dart';
 
-class LoginInquilino extends StatefulWidget {
-  LoginInquilino({Key? key}) : super(key: key);
+class RegistroInquilino extends StatefulWidget {
+  RegistroInquilino({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _RegistroInquilino createState() => _RegistroInquilino();
 }
 
-class _LoginState extends State<LoginInquilino> {
+class _RegistroInquilino extends State<RegistroInquilino> {
   String _nombre = "";
   String _email = "";
   String _password = "";
@@ -32,7 +31,7 @@ class _LoginState extends State<LoginInquilino> {
               backgroundImage: AssetImage('assets/images/logosinfondo.png'),
             ),
             Text(
-              'Iniciar sesion como inquilino',
+              'Registrate como Inquilino',
               style: TextStyle(
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700,
@@ -90,12 +89,9 @@ class _LoginState extends State<LoginInquilino> {
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(50)))),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeInquilino()));
-                },
+                onPressed: () {},
                 child: Text(
-                  'Iniciar Sesion',
+                  'Registrar',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 30.0,
@@ -109,29 +105,13 @@ class _LoginState extends State<LoginInquilino> {
                 minimumSize: Size.square(50),
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PrimeraPagina()));
-              },
-              label: const Text(''),
-              icon: const Icon(Icons.login),
-            ),
-            TextButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.lightBlue),
-                overlayColor: MaterialStateProperty.resolveWith<Color?>(
-                    (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.focused))
-                    return Colors.red; // Defer to the widget's default.
-                }),
-              ),
-              onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => RegistroInquilino(),
-                    ));
+                        builder: (context) => LoginInquilino())); //ojo
               },
-              child: Text('No Tienes Cuenta?'), //comentario
+              label: const Text(''),
+              icon: const Icon(Icons.login),
             )
           ])
         ],
