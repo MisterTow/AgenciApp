@@ -1,6 +1,7 @@
 import 'package:agencia/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import './inicio.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: const Splash(),
+      home: PrimeraPagina(),
     );
   }
 }
