@@ -1,13 +1,17 @@
+import 'package:agencia/homes/home_inquilinos.dart';
+import 'package:agencia/homes/home_propietario.dart';
 import 'package:flutter/material.dart';
+import './loginpropietario.dart';
+import 'package:agencia/inicio.dart';
 
-class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+class LoginPropietario extends StatefulWidget {
+  LoginPropietario({Key? key}) : super(key: key);
 
   @override
   _LoginState createState() => _LoginState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginState extends State<LoginPropietario> {
   String _nombre = "";
   String _email = "";
   String _password = "";
@@ -24,7 +28,7 @@ class _LoginState extends State<Login> {
           Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             CircleAvatar(
               radius: 100.0,
-              backgroundColor: Color.fromARGB(255, 185, 184, 184),
+              backgroundColor: Color.fromARGB(255, 240, 238, 238),
               backgroundImage: AssetImage('assets/images/logosinfondo.png'),
             ),
             Text(
@@ -86,7 +90,13 @@ class _LoginState extends State<Login> {
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(50)))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => homepropietario(title: 'hola'),
+                      ));
+                },
                 child: Text(
                   'Iniciar Sesion',
                   style: TextStyle(
@@ -95,6 +105,21 @@ class _LoginState extends State<Login> {
                       fontFamily: 'NerkoOne'),
                 ),
               ),
+            ),
+            const SizedBox(height: 50),
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.square(50),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PrimeraPagina(),
+                    ));
+              },
+              label: const Text(''),
+              icon: const Icon(Icons.login),
             )
           ])
         ],

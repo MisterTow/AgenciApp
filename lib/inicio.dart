@@ -1,6 +1,8 @@
-import 'package:agencia/login.dart';
+import 'package:agencia/logins/logininquilino.dart';
+import 'package:agencia/logins/loginpropietario.dart';
+import 'package:agencia/splash.dart';
 import 'package:flutter/material.dart';
-import './home_inquilinos.dart';
+import 'homes/home_inquilinos.dart';
 
 // class Inicio extends StatefulWidget {
 //   Inicio({Key? key}) : super(key: key);
@@ -12,41 +14,59 @@ import './home_inquilinos.dart';
 class PrimeraPagina extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("FirsPage"),
-        backgroundColor: Colors.green,
-      ),
-      body: Container(
-          width: 500,
-          height: 500,
-          alignment: Alignment.center,
-          child: ListView(
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    minimumSize: Size(280, 80),
-                    textStyle: TextStyle(fontSize: 28),
-                    primary: Colors.cyanAccent),
-                child: Text("Click me"),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Login()));
-                },
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    minimumSize: Size(280, 80),
-                    textStyle: TextStyle(fontSize: 28),
-                    primary: Colors.cyanAccent),
-                child: Text("Click me"),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Login()));
-                },
-              ),
-            ],
-          )),
-    );
+    return Center(
+        child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              elevation: 8,
+              shape: CircleBorder(),
+              minimumSize: Size.square(170),
+              textStyle: TextStyle(fontSize: 28),
+              primary: Color.fromARGB(74, 96, 110, 255)),
+          child: Text(
+            "Propietario",
+            style: const TextStyle(color: Colors.blue),
+          ),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginPropietario()));
+          },
+        ),
+        Divider(
+          height: 200,
+          thickness: 5,
+          color: Color.fromARGB(255, 217, 218, 219),
+          indent: 20,
+          endIndent: 40,
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              elevation: 8,
+              shape: CircleBorder(),
+              minimumSize: Size.square(170),
+              textStyle: TextStyle(fontSize: 26),
+              primary: Color.fromARGB(74, 96, 110, 255)),
+          child: Text(
+            "Arrendatario",
+            style: const TextStyle(color: Colors.blue),
+          ),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginInquilino()));
+          },
+        ),
+        const SizedBox(height: 40),
+        ElevatedButton.icon(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Splash()));
+          },
+          label: const Text(''),
+          icon: const Icon(Icons.login),
+        ),
+      ],
+    ));
   }
 }

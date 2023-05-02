@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:agencia/inicio.dart';
 import 'package:flutter/material.dart';
-import 'package:agencia/login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -18,7 +17,7 @@ class _splashState extends State<Splash> {
     Timer(
         Duration(seconds: 10),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Login())));
+            context, MaterialPageRoute(builder: (context) => PrimeraPagina())));
   }
 
   @override
