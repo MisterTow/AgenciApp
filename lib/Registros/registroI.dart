@@ -1,7 +1,8 @@
-import 'package:agencia/logins/logininquilino.dart';
+import 'package:agencia/Registros/registroI.dart';
 import 'package:flutter/material.dart';
 import 'package:agencia/inicio.dart';
 import 'package:agencia/Registros/registroI.dart';
+import 'package:agencia/logins/loginInquilino.dart';
 
 class RegistroInquilino extends StatefulWidget {
   RegistroInquilino({Key? key}) : super(key: key);

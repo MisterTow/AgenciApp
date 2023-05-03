@@ -1,4 +1,4 @@
-import 'package:agencia/logins/logininquilino.dart';
+import 'package:agencia/logins/loginInquilino.dart';
 import 'package:agencia/logins/loginpropietario.dart';
 import 'package:agencia/splash.dart';
 import 'package:flutter/material.dart';
