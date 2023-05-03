@@ -1,4 +1,5 @@
 import 'package:agencia/Registros/registroI.dart';
+import 'package:agencia/Registros/registroPropietario.dart';
 import 'package:agencia/homes/home_inquilinos.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -193,7 +194,7 @@ class _LoginState extends State<LoginPropietario> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RegistroInquilino(),
+                                  builder: (context) => RegistroPropietario(),
                                 ));
                           },
                           child: Text('No Tienes Cuenta?'), //comentario

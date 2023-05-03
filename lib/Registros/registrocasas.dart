@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:agencia/Registros/registroPropietario.dart';
 import 'package:flutter/material.dart';
 import 'package:agencia/inicio.dart';
